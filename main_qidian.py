@@ -5,6 +5,7 @@ from PIL import Image
 pyautogui.PAUSE=2.0
 
 
+
 #解决分辨率问题
 def resolution_ratio(img_url):
     #这里假设的是
@@ -33,20 +34,12 @@ def fun_loop( fun,timeout=10,correct="",error=""):
 
     print(error)
 
-#start MUMU
-def start_mumu():
-    try:
-        location=pyautogui.locateOnScreen(resolution_ratio("./images/qidian/00_MUM.png"),grayscale=False,confidence=0.9)
-        pyautogui.doubleClick(location)
-        return(bool(location))
-    except pyautogui.ImageNotFoundException:
-        return False
-        # print("Image not find")
+
 #Start qidian
 def start_qidian():
     try:
         location=pyautogui.locateOnScreen(resolution_ratio("./images/qidian/01_qidian.png"),grayscale=False,confidence=0.9)
-        pyautogui.doubleClick(location)
+        pyautogui.click(location,button='left')
         return(bool(location))
     except pyautogui.ImageNotFoundException:
         return False
@@ -127,7 +120,7 @@ def specific_fun_loop( fun,timeout=10,correct="",error=""):
 
 
 def main_fun():
-    fun_loop(start_qidian,timeout=20,correct="qidian found!",error="qidian not find")
+    fun_loop(start_qidian,timeout=10,correct="qidian found!",error="qidian not find")
     fun_loop(click_button_me,timeout=15,correct="button_me found!",error="button_me not find")
     fun_loop(click_welfare,timeout=5,correct="button_welfare found!",error="button_welfare not find")
 
