@@ -6,7 +6,7 @@ python环境建议3.11<br>
 适合有基础的用户:
 1. 手动打开MUMU模拟器
 2. 打开`起点读书`,确保已经登录,且无弹窗遮挡
-3. 在当前目录下打开cmd,输入并运行`pip install -r requirenments.txt`
+3. 在项目所在目录下打开cmd,输入并运行`pip install -r requirenments.txt`
 4. 运行`main.py`,等待看完广告即可,运行期间可以把模拟器最小化.
 
 
